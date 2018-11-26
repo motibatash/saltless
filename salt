@@ -1,2 +1,3 @@
 # Execute a local salt-call every 5 minutes
-*/5 * * * * root su -c "/usr/bin/salt-call state.highstate --local 2>&1 > /dev/null"
+*/1 * * * * su -s /bin/sh nobody -c 'cd /srv/salt/base && /usr/local/bin/git -q pull origin master'
+*/1 * * * * root su -c "/usr/bin/salt-call state.highstate --local 2>&1 > /dev/null"

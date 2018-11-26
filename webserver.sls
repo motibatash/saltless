@@ -4,4 +4,4 @@ httpd:               # ID declaration
 
 /var/www/html/index.html:
   file.managed:
-    - source: salt://salt/index.html
+    - source: salt://index.html
